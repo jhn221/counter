@@ -33,36 +33,40 @@ class HomeScreen extends StatelessWidget {
               List<MovieModel> popularInnerList = result.data![0];
               List<MovieModel> comingInnerList = result.data![1];
               List<MovieModel> playingInnerList = result.data![2];
-              return Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const SizedBox(height: 20),
-                  const Text(
-                    'Popular Movies',
-                    textAlign: TextAlign.left,
-                    style: TextStyle(
-                      fontWeight: FontWeight.w900,
-                      fontSize: 20,
+              return SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(height: 20),
+                    const Text(
+                      'Popular Movies',
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                        fontWeight: FontWeight.w900,
+                        fontSize: 20,
+                      ),
                     ),
-                  ),
-                  // for (var comingMovie in comingInnerList)
-                  Expanded(child: makeList(popularInnerList)),
-                  const Text(
-                    'Now in Cinemas',
-                    style: TextStyle(fontWeight: FontWeight.w900, fontSize: 20),
-                  ),
-                  Expanded(child: playingList(playingInnerList)),
-                  const Text(
-                    'Coming Soon',
-                    style: TextStyle(fontWeight: FontWeight.w900, fontSize: 20),
-                  ),
-                  Expanded(child: comingList(comingInnerList)),
-                  // const Text(
-                  //   'Coming Soon',
-                  //   style: TextStyle(fontWeight: FontWeight.w900, fontSize: 20),
-                  // ),
-                  // Expanded(child: comingList(comingInnerList)),
-                ],
+                    // for (var comingMovie in comingInnerList)
+                    // Expanded(child: makeList(popularInnerList)),
+                    SizedBox(height: 300, child: makeList(popularInnerList)),
+                    const Text(
+                      'Now in Cinemas',
+                      style:
+                          TextStyle(fontWeight: FontWeight.w900, fontSize: 20),
+                    ),
+                    // Expanded(child: playingList(playingInnerList)),
+                    SizedBox(height: 250, child: playingList(playingInnerList)),
+                    const Text(
+                      'Coming Soon',
+                      style:
+                          TextStyle(fontWeight: FontWeight.w900, fontSize: 20),
+                    ),
+                    SizedBox(
+                      height: 300,
+                      child: comingList(comingInnerList),
+                    ),
+                  ],
+                ),
               );
             }
 
