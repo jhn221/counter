@@ -50,7 +50,14 @@ class playingMovie extends StatelessWidget {
                     child: Image.network(
                         'https://image.tmdb.org/t/p/w500$backdrop_path'),
                   ),
-                  Text(title)
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Text(
+                    title,
+                    style: const TextStyle(
+                        fontSize: 15, fontWeight: FontWeight.w700),
+                  )
                 ],
               ),
             ),
