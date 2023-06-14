@@ -22,28 +22,41 @@ class DetailScreen extends StatelessWidget {
         ),
       ),
       body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image:
-                NetworkImage('https://image.tmdb.org/t/p/w500$backdrop_path'),
-          ),
-        ),
+        // decoration: BoxDecoration(
+        //   image: DecorationImage(
+        //     image:
+        //         NetworkImage('https://image.tmdb.org/t/p/w500$backdrop_path'),
+        //   ),
+        // ),
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
           child: Column(
             children: [
+              Container(
+                  decoration:
+                      BoxDecoration(borderRadius: BorderRadius.circular(29)),
+                  child: Image.network(
+                      'https://image.tmdb.org/t/p/w500$backdrop_path')),
               const SizedBox(
-                height: 40,
+                height: 20,
               ),
               Text(
                 title,
-                style: const TextStyle(fontSize: 25, color: Colors.white),
+                style: const TextStyle(fontSize: 25, color: Colors.black),
               ),
               const Spacer(),
+              const Text(
+                'StoryLine',
+                style: TextStyle(fontSize: 30, color: Colors.black),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
               Text(
                 overview,
-                style: const TextStyle(fontSize: 25, color: Colors.white),
+                style: const TextStyle(fontSize: 18, color: Colors.black),
               ),
+              const Spacer(),
             ],
           ),
         ),

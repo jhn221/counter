@@ -14,7 +14,8 @@ class movie1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-      child: Container(
+      child: SizedBox(
+        height: 2000,
         child: Row(
           children: [
             // Flexible(
@@ -49,6 +50,7 @@ class movie1 extends StatelessWidget {
                         'https://image.tmdb.org/t/p/w500$backdrop_path'),
                   ),
                   const Spacer(),
+                  Text(title)
                 ],
               ),
             ),
